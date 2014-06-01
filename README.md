@@ -18,3 +18,4 @@ asossh-mysql
    
   
   由于本项目是本人的毕业设计，所以设计时技术还不成熟，希望将其开源，欢迎喜欢的java程序猿们来吐吐槽。<br>
+  新浪微博：<a href="http://weibo.com/945825888"  target ="_blank">http://weibo.com/945825888</a>
