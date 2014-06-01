@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <!--定义Hibernate的事务管理器HibernateTransactionManager -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <!-- 依赖注入上面定义的sessionFactory -->
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+	<!-- 基于AOP技术的事务管理实现 -->
+	<aop:config>
+		<!-- 定义一个事务切入点,拦截com.eportal.service.impl包中所有类的所有方法 -->
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.secret.dao.base.BaseDaoImpl.*(..))" />
+		<!-- 引用txAdvice事务通知 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPointcut"/>
+	</aop:config>	
+    <!-- 定义一个事务通知txAdvice,配置事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- 所有以find、list、load、get及 is开头的业务逻辑方法均不需要事务控制且只读 -->
+			<tx:method name="find*" propagation="NOT_SUPPORTED" read-only="true"/>
+			<tx:method name="list*" propagation="NOT_SUPPORTED" read-only="true"/>
+			<tx:method name="load*" propagation="NOT_SUPPORTED" read-only="true"/>
+			<tx:method name="get*" propagation="NOT_SUPPORTED" read-only="true"/>
+			<tx:method name="is*" propagation="NOT_SUPPORTED" read-only="true"/>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<!-- 设置所有方法均进行事务控制，如果当前没有事务，则新建一个事务 -->
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<bean id="baseDao" class="com.secret.dao.base.BaseDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>
+	
+	
+	
+	
+	

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+		<!-- 开启基于@AspectJ切面的注解处理器 -->
+	 	 <aop:aspectj-autoproxy proxy-target-class="true"/>
+		<!-- 将日志切面交给Spring容器管理 -->
+		<bean id="logAspectJ" class="com.secret.aop.LogAspectJS"/>
+		<!-- 使用XML方式进行AOP配置 -->
+		<aop:config>
+		  <!-- 使用XML方式配置日志切面 -->
+		  <aop:aspect id="logaop" ref="logAspectJ">
+		  	<aop:pointcut id="logpointcut" expression="execution(* com.secret.action.*.*(..))"/>
+		  	<!-- 将LogAspectJ切面中的myBeforeAdvice方法定义成前置通知 -->
+		  	<aop:before pointcut-ref="logpointcut" method="myBeforeAdvice"/>
+		  	<!-- 将LogAspectJ切面中的myAfterReturningAdvice方法定义成后置通知 -->
+		  	<aop:after-returning pointcut-ref="logpointcut" method="myAfterReturningAdvice"/>
+		  	<!-- 将LogAspectJ切面中的myAfterThrowingAdvice方法定义成异常通知 -->
+		  	<aop:after-throwing pointcut-ref="logpointcut" method="myAfterThrowingAdvice" throwing="e"/>
+		  	<!-- 将LogAspectJ切面中的myAfterAdvice方法定义成最终通知 -->
+		  	<aop:after pointcut-ref="logpointcut" method="myAfterAdvice"/>
+		  	<!-- 将LogAspectJ切面中的myAroundAdvice方法定义成环绕通知 -->
+		  	<aop:around pointcut-ref="logpointcut" method="myAroundAdvice"/>
+		  </aop:aspect>
+		</aop:config>
+</beans>
+	
+	
+	
+	
+	

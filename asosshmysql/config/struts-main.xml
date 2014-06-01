@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="asossh" namespace="/asossh" extends="mystrutsdefault">
+<!-- websocket聊天系统 -->
+		<action name="chat" class="CallMeSocketAction">
+			 <result name="gotoCallMeHome">/callme/callhome.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			 <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	 <interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 支付宝模块 -->
+		<action name="alipay" class="AlipayAction">
+				<result name="return_url">/alipay/return_url.jsp</result>
+				<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			 <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	<interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 申请成为卖家 -->
+		<action name="applySeller" class="ApplySellerAction">
+				<result name="showapply">/admin/showapply.jsp</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">userinfo</param>
+					<param name="namespace">/asossh</param>
+				</result>
+		  	   <interceptor-ref name="loginCheck"></interceptor-ref>
+				<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			   <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	
+<!-- 卖家模块 -->
+		<action name="seller" class="SellerAction">
+				<result name="sellermain">/seller/sellermain.jsp</result>
+				<result name="sellerinhotel">/seller/sellerinhotel.jsp</result>
+				<result name="shipments">/seller/sellershipments.jsp</result>
+		  		<interceptor-ref name="loginCheck"></interceptor-ref>
+				<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			 	<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+<!-- 管理员、用户登录、注销 -->		
+		<action name="userlogin"  class="UserloginAction">
+			<result name="success">/index.jsp</result>
+			<result name="userlogin">/user/userlogin.jsp</result>
+			<result name="login">/MyJsp.jsp</result>
+			<result name="adminoutlogin">/admin/adminlogin.jsp</result>
+			<result name="treaty">/user/treaty.jsp</result>
+		</action>
+<!-- 用户注册 -->
+	<action name="userRegister"  class="UserRegisterAction">
+			<interceptor-ref name="tokenSession"></interceptor-ref>
+	    	<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+<!-- 用户的信息 -->
+		<action name="userinfo" class="UserAction" >
+				<result name="userHome">/user/userhome.jsp</result>
+				
+				<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			   <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	   <interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 进入到首页 -->
+		<action name="index" class="IndexAction">
+				<result name="success">/home.jsp</result>
+		</action>
+<!-- 首页收索 -->
+		<action name="seekinput" class="PullDrowInputAction">
+				<result name="seekGoodorHotel">/seek/seekgoodorhotel.jsp</result>
+		</action>
+<!-- 上传菜谱 与管理-->
+		<action name="goods"  class="GoodsAction">
+			<result name="save">/admin/upgoods.jsp</result>
+			<result name="showGoods">/admin/admgoods.jsp</result>
+			<result name="showupdategoods">/admin/updategoods.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<param name="maxinumSize">4194304</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		  	<interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 显示饭店信息 -->
+		<action name="hotel" class="HotelAction">
+			<result name="mainhotel">/hotel/hotelmain.jsp</result>
+		</action>
+<!-- 饭店管理 -->
+		<action name="hotelmanage" class="HotelManageAction">
+			<result name="addhotel">/hotel/hotelsave.jsp</result>
+			<result name="hotelupdate">/hotel/hotelupdate.jsp</result>
+			<result name="mealupdate">/hotel/mealupdate.jsp</result>
+			<result name="hotelsave">/hotel/hotelsave.jsp</result>
+			<result name="mealShow">/hotel/mealManage.jsp</result>
+			<result name="mainhotel">/hotel/hotelmain.jsp</result>
+			<result name="showhotel">/hotel/hotelshow.jsp</result>
+		 	<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+		  	<interceptor-ref name="fileUpload">
+				<param name="maxinumSize">4194304</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack"></interceptor-ref>
+			 <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	<interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 评价  -->
+		<action name="goodsAssess"  class="GoodsAssessAction">
+			<result name="showuserasess">/user/showuserasess.jsp</result>
+			<result name="userasess">/user/userasess.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		  	<interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 种类管理 -->
+		<action name="admSort"  class="AdmSortAction">
+			<result name="admSort">/admin/admSort.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			   <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	   <interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 广告管理 -->
+		<action name="ads" class="AdsAction">
+			<result name="success">/ads/admAds.jsp</result>
+			<result name="admIssueAds">/ads/admIssueAds.jsp</result>
+			<result name="updateads">/ads/updataads.jsp</result>
+			<result name="upads">/ads/upads.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		  	<interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 菜单购物车 -->
+		<action name="cart" class="CartAction">
+			<result name="addCart">/order/myCart.jsp</result>
+			<result name="addMyAddress">/order/myAddress.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			   <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	   <interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 订单支付  -->
+		<action name="order"  class="OrderAction">
+			<result name="alipay">/alipay/cashier.jsp</result>
+			<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			   <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	   <interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+<!-- 菜谱收藏 -->
+		<action name="userCol"  class="UserColAction">
+				<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+			   <interceptor-ref name="defaultStack"></interceptor-ref>
+		  	   <interceptor-ref name="loginCheck"></interceptor-ref>
+		</action>
+
+<!-- 智能填充预读 -->
+		<action name="autocompleter" class="AutocompleterACtion">
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="user" catalog="asossh"
+		class="com.secret.pojo.UserPojo">
+	</table>
+	<table name="ads" catalog="asossh"
+		class="com.secret.pojo.AdsPojo">
+	</table>
+	<table name="goods_assess" catalog="asossh"
+		class="com.secret.pojo.GoodsAssessPojo">
+	</table>
+	<table name="goods_image" catalog="asossh"
+		class="com.secret.pojo.GoodsImagePojo">
+	</table>
+	<table name="goods_info" catalog="asossh"
+		class="com.secret.pojo.GoodsInfoPojo">
+	</table>
+	<table name="goods_order" catalog="asossh"
+		class="com.secret.pojo.GoodsOrderPojo">
+	</table>
+	<table name="recommend" catalog="asossh"
+		class="com.secret.pojo.RecommendPojo">
+	</table>
+	<table name="sort" catalog="asossh"
+		class="com.secret.pojo.SortPojo">
+	</table>
+	<table name="user_col" catalog="asossh"
+		class="com.secret.pojo.UserColPojo">
+	</table>
+	<table name="user_head" catalog="asossh"
+		class="com.secret.pojo.UserHeadPojo">
+	</table>
+	<table name="hotel" catalog="asossh"
+		class="com.secret.pojo.HotelPojo">
+	</table>
+	<table name="meal" catalog="asossh"
+		class="com.secret.pojo.MealPojo">
+	</table>
+	<table name="goods_cart" catalog="asossh"
+		class="com.secret.pojo.GoodsCartPojo">
+	</table>
+	<table name="order_address" catalog="asossh"
+		class="com.secret.pojo.OrderAddressPojo">
+	</table>
+	<table name="applyseller" catalog="asossh"
+		class="com.secret.pojo.ApplySellerPojo">
+	</table>
+	<table name="chat" catalog="asossh"
+		class="com.secret.pojo.ChatPojo">
+	</table>
+	<table name="user_friend" catalog="asossh"
+		class="com.secret.pojo.UserFriendPojo">
+	</table>
+	<table name="chat_transmit_files" catalog="asossh"
+		class="com.secret.pojo.ChatTransmitFilesPojo">
+	</table>
+	<table name="chat" catalog="asossh"
+		class="com.secret.pojo.ChatPojo">
+	</table>
+	<table name="friend_group" catalog="asossh"
+		class="com.secret.pojo.FriendGroupPojo">
+	</table>
+	<table name="miniblogs_assess" catalog="asossh"
+		class="com.secret.pojo.MiniBlogsAssessPojo">
+	</table>
+	<table name="miniblogs" catalog="asossh"
+		class="com.secret.pojo.MiniBlogsPojo">
+	</table>
+	<table name="user_friend_group_type" catalog="asossh"
+		class="com.secret.pojo.UserFriendGroupTypePojo">
+	</table>
+	<table name="user_friend_group" catalog="asossh"
+		class="com.secret.pojo.UserFriendGroupPojo">
+	</table>
+	<table name="user_friend" catalog="asossh" class="com.secret.pojo.UserFriendPojo"></table>
+</hibernate-reverse-engineering>

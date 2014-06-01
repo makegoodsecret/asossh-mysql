@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	 
+	 <bean name="AdmSortAction"       class="com.secret.action.AdmSortAction"       scope="prototype" autowire="byName"></bean>
+	 <bean name="AdsAction"           class="com.secret.action.AdsAction"           scope="prototype" autowire="byName"></bean>
+	 <bean name="AlipayAction"        class="com.secret.action.AlipayAction"        scope="prototype" autowire="byName"></bean>
+	 <bean name="ApplySellerAction"   class="com.secret.action.ApplySellerAction"   scope="prototype" autowire="byName"></bean>
+	 <bean name="AutocompleterACtion" class="com.secret.action.AutocompleterACtion" scope="prototype" autowire="byName"></bean>
+	 <bean name="BaseAction"          class="com.secret.action.BaseAction"          scope="prototype" autowire="byName"></bean>
+	 <bean name="CallMeSocketAction"  class="com.secret.action.CallMeSocketAction"  scope="prototype" autowire="byName"></bean>
+	 <bean name="CartAction"          class="com.secret.action.CartAction"          scope="prototype" autowire="byName"></bean>
+	 <bean name="ChartAction"         class="com.secret.action.ChartAction"         scope="prototype" autowire="byName"></bean>
+	 <bean name="GoodsAction"         class="com.secret.action.GoodsAction"         scope="prototype" autowire="byName"></bean>
+	 <bean name="GoodsAssessAction"   class="com.secret.action.GoodsAssessAction"   scope="prototype" autowire="byName"></bean>
+	 <bean name="HotelAction"         class="com.secret.action.HotelAction"         scope="prototype" autowire="byName"></bean>
+	 <bean name="HotelManageAction"   class="com.secret.action.HotelManageAction"   scope="prototype" autowire="byName"></bean>
+	 <bean name="IndexAction"         class="com.secret.action.IndexAction"         scope="prototype" autowire="byName"></bean>
+	 <bean name="MassageAction"       class="com.secret.action.MassageAction"       scope="prototype" autowire="byName"></bean>
+	 <bean name="OrderAction"         class="com.secret.action.OrderAction"         scope="prototype" autowire="byName"></bean>
+	 <bean name="PullDrowInputAction" class="com.secret.action.PullDrowInputAction" scope="prototype" autowire="byName"></bean>
+	 <bean name="ReportFormsAction"   class="com.secret.action.ReportFormsAction"   scope="prototype" autowire="byName"></bean>
+	 <bean name="SellerAction"        class="com.secret.action.SellerAction"        scope="prototype" autowire="byName"></bean>
+	 <bean name="StaticAction"        class="com.secret.action.StaticAction"        scope="prototype" autowire="byName"></bean>
+	 <bean name="UserAction"          class="com.secret.action.UserAction"          scope="prototype" autowire="byName"></bean>
+	 <bean name="UserColAction"       class="com.secret.action.UserColAction"       scope="prototype" autowire="byName"></bean>
+	 <bean name="UserloginAction"     class="com.secret.action.UserloginAction"     scope="prototype" autowire="byName"></bean>
+	 <bean name="UserRegisterAction"  class="com.secret.action.UserRegisterAction"  scope="prototype" autowire="byName"></bean>
+	 
+</beans>
+	
+	
+	
+	
+	

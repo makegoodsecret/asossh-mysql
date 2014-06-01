@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+		<bean id="userService" class="com.secret.service.impl.UserServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="adsService" class="com.secret.service.impl.AdsServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="goodsAssessService" class="com.secret.service.impl.GoodsAssessServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="goodsImageService" class="com.secret.service.impl.GoodsImageServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="goodsInfoService" class="com.secret.service.impl.GoodsInfoServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="goodsOrderService" class="com.secret.service.impl.GoodsOrderServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="recommendService" class="com.secret.service.impl.RecommendServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="sortService" class="com.secret.service.impl.SortServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="userColService" class="com.secret.service.impl.UserColServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="userHeadService" class="com.secret.service.impl.UserHeadServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="hotelService" class="com.secret.service.impl.HotelServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="mealService" class="com.secret.service.impl.MealServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean id="goodsCartService" class="com.secret.service.impl.GoodsCartServiceImpl">
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean  id="orderAddressService" class="com.secret.service.impl.OrderAddressServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean  id="applySellerService" class="com.secret.service.impl.ApplySellerServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean  id="userFriendService" class="com.secret.service.impl.UserFriendServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>
+		<bean  id="chatService" class="com.secret.service.impl.ChatServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>	
+		<bean  id="userFriendGroupTypeService" class="com.secret.service.impl.UserFriendGroupTypeServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>	
+		<bean  id="userFriendGroupService" class="com.secret.service.impl.UserFriendGroupServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>	
+		<bean  id="miniBlogsAssessService" class="com.secret.service.impl.MiniBlogsAssessServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>	
+		<bean  id="miniBlogsService" class="com.secret.service.impl.MiniBlogsServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>	 
+		<bean  id="chatTransmitFilesService" class="com.secret.service.impl.ChatTransmitFilesServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>	
+		<bean  id="friendGroupService" class="com.secret.service.impl.FriendGroupServiceImpl"> 
+			<property name="sessionFactory" ref="sessionFactory"/>
+		</bean>			
+	 
+	<!-- 通过IOC依赖注入聊天对象 -->
+		<bean id="callMeSocketService" class="com.secret.service.impl.CallMeSocketServiceImpl" 
+				autowire="byName">
+			<description>通过autowire="byName"的自动通过setter自动注入</description>
+		</bean> 
+</beans>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+<!-- bean注入需要实现的 事务 -->
+		<bean id="quartEmailService" class="com.secret.quartzjob.QuartEmailServiceImpl"></bean>
+		<bean id="quartBackService" class="com.secret.quartzjob.QuartBackServiceImpl"></bean>
+	<!-- 配置一个Job -->
+	<!-- 
+		org.springframework.scheduling.quartz.JobDetailBean
+		中的两个属性：
+		jobClass属性及我们在java代码中定义的任务类（其实是org.springframework.scheduling.quartz.JobDetailBean中的setJobClass(Class jobClass)）方法。
+	 	jobDataAsMap属性即该任务类中需要注入的属性值（其实是org.springframework.scheduling.quartz.JobDetailBean中的setJobDataAsMap(Map jobDataAsMap)方法。
+	 -->	
+	 <bean id="QuartzJobBean" class="org.springframework.scheduling.quartz.JobDetailBean">
+	 	<property name="jobClass" value="com.secret.quartzjob.QuartEmailJobs"></property>
+	 	<property name="jobDataAsMap">
+	 		<map>
+	 		<!-- 对有意义的变量进行初始化,key="emailService" 是 QuartEmailJobs类的私有属性-->
+	 		<entry key="emailService" value-ref="quartEmailService"></entry>
+	 		<entry key="quartBackService" value-ref="quartBackService"></entry>
+	 		</map>
+	 	</property>
+	 </bean>
+<!-- 配置一个简单的触发器SimleTriggerBean,它只支持按照一定频率调用任务，如每隔10s运行一次 -->
+	 <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+	 <!-- 注入job bean -->
+	 <property name="jobDetail" ref="QuartzJobBean"></property>
+	 <!-- 调度工厂实例化后，经过1秒后开始执行调度(以毫秒为单位) -->
+	 <property name="startDelay" value="1000"></property>
+	 <!-- 每隔10s触发一次 -->
+	 <property name="repeatInterval" value="10000"></property>
+	 </bean>
+
+<!-- 配置复杂的触发器CronTriggerBean（可以只使用一个），它支持到指定时间运行一次，如每天12:00运行一次等 
+	jobDetail其实也是org.springframework.scheduling.quartz.CronTriggerBean中setJobDetail(JobDetail jobDetail)
+--> 
+	 <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	 	<!-- 注入job bean -->
+	 	<property name="jobDetail" ref="QuartzJobBean"></property>
+	 	<property name="cronExpression">
+	 			<!-- 这里很重要，可以自定义表达式实现定时触发。 -->
+	 			<value>0 15 20 * * ?</value><!-- 每分钟触发一次 -->
+	 	</property>
+	 </bean>
+<!-- Spring触发工厂 
+		trigger属性也是org.springframework.scheduling.quartz.SchedulerFactoryBean类的setTriggers(Trigger[] triggers)方法
+	-->	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+			<!-- 配置简单的触发器 -->
+			<!-- <ref bean="simpleTrigger"/> -->	<!-- 简单的可以在测试时使用 -->
+			<!-- 配置复杂的触发器 -->
+			<ref bean="cronTrigger"/>
+			</list>
+		</property>
+	
+	</bean>
+
+
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="report" namespace="/report" extends="mystrutsdefault">
+	<!-- 报表管理 -->
+	<action name="reportForms" class="ReportFormsAction">
+		<result name="reportForms">/reportforms/hotelloggers.jsp</result>
+		<!-- 导出Excel -->
+		<result name="exportsuccess" type="stream">
+			<param name="contentType">${contentType}</param>				<!-- 定义文件类型 -->
+			<param name="inputName">inputStream</param>						<!-- 定义文件路径 -->
+			<param name="contentDisposition">attachment;filename="${filename}"</param>	<!-- 定义文件名 -->
+			<param name="bufferSize">2048</param>							
+		</result>
+				<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+	    <interceptor-ref name="defaultStack"></interceptor-ref>
+		<interceptor-ref name="loginCheck"></interceptor-ref>
+	</action>
+	</package>
+	<!-- 报表图 -->
+  <package name="jfreechartdefaultpack" extends="mystrutsdefault">
+    	<result-types>
+    		<result-type name="chart" class="org.apache.struts2.dispatcher.ChartResult">
+    			<param name="height">400</param>
+    			<param name="width">600</param>
+    		</result-type>
+    	</result-types>
+   		<action name="exampleAction"  class="ChartAction">
+    		 <result  type="chart">
+    			<param name="width">1000</param>
+    			<param name="height">500</param>
+    		</result>
+    		<!-- 调用自定义拦截器与struts2默认的拦截器 -->
+	   	 	<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+    	</action>
+    </package>
+</struts>
+ 

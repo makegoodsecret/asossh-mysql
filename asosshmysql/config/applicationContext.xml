@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- 数据库配置文件的导入 -->
+	<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:dataSource.properties</value>
+		</property>
+	</bean>
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="${mysql.database.driver}">
+		</property>
+		<property name="url" 
+			value="${mysql.database.url}">
+		</property>
+		<property name="username" value="${mysql.database.user}"></property>
+		<property name="password" value="${mysql.database.password}"></property>
+		<property name="maxActive" value="${mysql.database.maxActive}"></property>
+		<property name="initialSize" value="${mysql.database.initialSize}" ></property>
+		<property name="maxIdle" value="${mysql.database.maxIdle}"></property>
+		<property name="maxWait" value="${mysql.database.maxWait}"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"></ref>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect" >
+					${mysql.database.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/secret/pojo/UserPojo.hbm.xml</value>
+				<value>com/secret/pojo/GoodsInfoPojo.hbm.xml</value>
+				<value>com/secret/pojo/SortPojo.hbm.xml</value>
+				<value>com/secret/pojo/UserColPojo.hbm.xml</value>
+				<value>com/secret/pojo/GoodsAssessPojo.hbm.xml</value>
+				<value>com/secret/pojo/AdsPojo.hbm.xml</value>
+				<value>com/secret/pojo/GoodsImagePojo.hbm.xml</value>
+				<value>com/secret/pojo/GoodsOrderPojo.hbm.xml</value>
+				<value>com/secret/pojo/UserHeadPojo.hbm.xml</value>
+				<value>com/secret/pojo/RecommendPojo.hbm.xml</value>
+				<value>com/secret/pojo/HotelPojo.hbm.xml</value>
+				<value>com/secret/pojo/MealPojo.hbm.xml</value>
+				<value>com/secret/pojo/OrderAddressPojo.hbm.xml</value>
+				<value>com/secret/pojo/GoodsCartPojo.hbm.xml</value>
+				<value>com/secret/pojo/ApplySellerPojo.hbm.xml</value>
+				<value>com/secret/pojo/UserFriendPojo.hbm.xml</value>
+				<value>com/secret/pojo/ChatPojo.hbm.xml</value>
+				
+				<value>com/secret/pojo/UserFriendGroupTypePojo.hbm.xml</value>
+				<value>com/secret/pojo/UserFriendGroupPojo.hbm.xml</value>
+				<value>com/secret/pojo/MiniBlogsAssessPojo.hbm.xml</value>
+				<value>com/secret/pojo/MiniBlogsPojo.hbm.xml</value>
+				<value>com/secret/pojo/ChatTransmitFilesPojo.hbm.xml</value>
+				<value>com/secret/pojo/FriendGroupPojo.hbm.xml</value>
+				
+				
+				
+			</list>
+		</property>
+		</bean>
+	<!-- 配置哪些事务参加 -->
+	<import resource="applicationContext_beans.xml"/>
+	<!-- 使用QUartz调度器 -->
+ 	<import resource="applicationContext_quart.xml"/>   
+	<!-- 配置AOP -->
+    <import resource="applicationContext_aop.xml"/>    
+    <!-- 事务管理     -->
+  	<import resource="applicationContext_transaction.xml"/>  
+    <!-- action -->
+    <import resource="applicationContext_action.xml"/> 
+	</beans>
+	
+	
+	
+	
+	
