@@ -17,5 +17,13 @@ asossh-mysql
    K. 聊天系统模块-- 基于HTML5 websocket协议实现的。个人与餐厅管理员的在线聊天。也支持个人与个人的聊天。<br>
    
   
+  使用说明：项目中 asosshmysql / WebRoot / assets 文件夹下的 <br>
+  a.邮件发送用户和密码需要替换.<br>
+  b.支付宝用户和key需要替换成自己的双担保支付用户和 key。<br>
+  
+  项目可能回报错，大家别忘了把调度给关了。
+  
+  
   由于本项目是本人的毕业设计，所以设计时技术还不成熟，希望将其开源，欢迎喜欢的java程序猿们来吐吐槽。<br>
-  新浪微博：<a href="http://weibo.com/945825888"  target ="_blank">http://weibo.com/945825888</a>
+  新浪微博：<a href="http://weibo.com/945825888"  target ="_blank">http://weibo.com/945825888</a> <br>
+  演示视频（部分模块），百度网盘地址。 http://pan.baidu.com/s/1EjLU2 提取码：mno4 
