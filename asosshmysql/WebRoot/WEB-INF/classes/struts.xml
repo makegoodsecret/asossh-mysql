@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- /**
+ * 
+ * @author 徐凯
+ * @email  makegoodsecret@sina.com
+ * @effect 毕业设计
+ * @copyright 网站设计归徐凯个人所有，仅供学习参考，如有商业使用请联系本人，盗版必究
+ * @QQ       1171669635	
+ */ -->
+<struts>
+
+<!-- 配置web应用的默认编码集为UTF-8 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+<!-- 配置Web应用的默认Locale为zh_CN -->
+ 	<constant name="strtus.locale" value="zh_CN"></constant>
+<!-- 配置Struts应用的国际化资源文件，多个文件中间可以用逗号隔开 -->
+	<constant name="struts.custom.i18n.resources" value="messageResouce_zh_CN"></constant>
+<!-- 配置应用是否处于开发模式，通常在开发调试阶段设为true，发布设为false -->
+	<constant name="struts.devMode" value="false"></constant>
+<!-- 配置默认的主题为simple-->
+	<constant name="struts.ui.theme" value="simple"></constant>
+<!-- 配置Spring的支持，默认struts2把Spring注释 了 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true"/>  
+<!-- 系统常量定义，定义上传文件临时存放路径 -->
+	<constant name="struts.multipart.saveDiv" value="d:\"></constant>
+<!-- 开始struts2 自2.1.8版本后需要手动开启页面获取静态常量和静态方法 -->		
+	 <constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+<!-- 开启动态方法的调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+<!-- 设置Action的请求扩展名为.action, 防止Struts2.1将无用扩展名请求也当成正常的请求 -->
+  <!-- 可以使用 .action使用别的后缀替换，进行伪装  -->
+ <constant name="struts.action.extension" value="action"></constant>  
+<!-- 限定文件大小 -->
+  <constant name="struts.multipart.maxSize" value="10240000" />
+  
+  <package name="mystrutsdefault" extends="struts-default">
+<!-- 自定义拦截器 -->
+		<interceptors>
+		<!-- 定义一个用户的登录权限拦截器 -->
+			<interceptor name="loginCheck" class="com.secret.interceptor.LoginedCheckInterceptor"/>
+		</interceptors>	
+<!-- 定义全局的跳转回登录页面 -->
+		<global-results>
+			<result name="target">${targeturl}</result><!-- 临时决定跳到哪里 -->
+			<result name="userlogin">/user/userlogin.jsp</result>
+			<result name="massageurl">/massageurl.jsp</result>
+			<!-- 用户没有登录 -->
+			<result name="globaluserlogin" type="redirectAction">
+				<param name="actionName">massageaction</param>
+				<param name="method">userloginmethod</param>
+			</result>
+			<!-- session失效 -->
+			<result name="globaluserloginnotsession" type="redirectAction">
+				<param name="actionName">massageaction</param>
+				<param name="method">userloginnotsessionmethod</param>
+			</result>
+			<!-- 权限不足 -->
+			<result name="globaluserloginnotpower" type="redirectAction">
+				<param name="actionName">massageaction</param>
+				<param name="method">userpowermethod</param>
+			</result>
+			<!-- 用户激活成功 -->
+			<result name="globalemailactivaytionsuccess" type="redirectAction">
+				<param name="actionName">massageaction</param>
+				<param name="method">emailactivaytion</param>
+			</result>
+			<!-- 用户激活失败 -->
+			<result name="globalemailactivaytionerror" type="redirectAction">
+				<param name="actionName">massageaction</param>
+				<param name="method">emailactivaytionerror</param>
+			</result>
+			<!-- 用户请求的资源不存在 -->
+			<result name="globalrequestIsExist" type="redirectAction">
+				<param name="actionName">massageaction</param>
+				<param name="method">requestIsExist</param>
+			</result>
+		</global-results>
+		 <!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 捕捉到Exception异常(所有异常)时跳转到exception所命名的视图上 -->
+			<exception-mapping exception="java.lang.Exception" result="exception"/>
+		</global-exception-mappings>	
+		<!-- 操作提示页面 -->
+		<action name="massageaction" class="MassageAction">
+			<result name="success">/massageurl.jsp</result>
+		</action>
+		</package>
+		
+<!-- 核心的action逻辑控制配置 -->
+	<include file="struts-main.xml"></include>  
+<!-- 报表管理 -->
+	<include file="struts-reportForm.xml"></include>	
+<!-- mobile手机web开发 -->
+	<include file="struts-mobile.xml"></include>
+</struts>    

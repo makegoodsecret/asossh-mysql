@@ -1,0 +1,22 @@
+
+
+a { text-decoration: none; }
+a:focus { outline: 0; }
+
+#page-wrap { width: 100%;   }
+
+#hoteltab{ font: 12px Georgia, serif; }
+#hoteltab .list-wrap {    margin-top: -15px; border: 1px solid #eee;border-radius:10px 10px 10px 10px ; }
+ 
+
+#hoteltab ul { list-style: none; }
+#hoteltab ul li a { display: block; border-bottom: 1px solid #666;  color: #666; }
+#hoteltab ul li a:hover { background: #333; color: white; }
+#hoteltab ul li:last-child a { border: none;  }
+
+#hoteltab .nav { overflow: hidden; margin-left: -40px; }
+
+#hoteltab .nav li { width: 25%; float: left;height:40px;   font-family:仿宋; padding-top: 10px;}
+#hoteltab .nav li a { display: block;  background: #666; color: white; font-size: 30px; text-align: center; border: 0;border: 1px solid #666;border-radius:10px 10px 10px 10px ; }
+#hoteltab li a.current,#hoteltab li a.current:hover { background-color: #eee !important; color: black; }
+#hoteltab .nav li a:hover, #hoteltab .nav li a:focus { background: #999;}

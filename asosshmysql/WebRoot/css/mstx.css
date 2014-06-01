@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+
+.clear {
+	clear: both;
+}
+#logo {
+	FLOAT: left; WIDTH: 320px; HEIGHT: 67px; TEXT-ALIGN: left 
+}
+#logo A {
+	DISPLAY: block; FLOAT: left; WIDTH: 165px; HEIGHT: 67px
+}
+#logo A STRONG {
+	DISPLAY: none
+}
+
+.f2_input {
+	border-right: #ddd 1px solid;
+	padding-right: 5px;
+	border-top: #ddd 1px solid;
+	padding-left: 5px;
+	font-size: 12px;
+	background: #fdfdfd;
+	padding-bottom: 8px;
+	border-left: #ddd 1px solid;
+	width: 200px;
+	color: #333;
+	padding-top: 8px;
+	border-bottom: #ddd 1px solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px}
+.f2_input2 {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ddd 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 12px; BACKGROUND: #fdfdfd; PADDING-BOTTOM: 4px; BORDER-LEFT: #ddd 1px solid; WIDTH: 102px; COLOR: #333; PADDING-TOP: 4px; BORDER-BOTTOM: #ddd 1px solid; -moz-border-radius: 5px; -webkit-border-radius: 5px
+}
+.f2_input_on {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ddd 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 12px; BACKGROUND: #fdfdfd; PADDING-BOTTOM: 4px; BORDER-LEFT: #ddd 1px solid; WIDTH: 250px; COLOR: #333; PADDING-TOP: 4px; BORDER-BOTTOM: #ddd 1px solid; -moz-border-radius: 5px; -webkit-border-radius: 5px
+}
+.btn {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FONT-SIZE: 12px; BACKGROUND: #f33; PADDING-BOTTOM: 2px; MARGIN: 0px; OVERFLOW: visible; COLOR: #fff; BORDER-TOP-STYLE: none; PADDING-TOP: 4px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none; -moz-border-radius: 5px; -webkit-border-radius: 5px
+}
+.mybtn {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FONT-SIZE: 12px; BACKGROUND: #f33; PADDING-BOTTOM: 2px; MARGIN: 0px; OVERFLOW: visible; COLOR: #fff; BORDER-TOP-STYLE: none; PADDING-TOP: 4px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none; -moz-border-radius: 5px; -webkit-border-radius: 5px
+}
+.arinfo {
+	CLEAR: both;  FLOAT: left; COLOR: #666;  font-size: 12px
+}
+.mform EM {
+	FONT-WEIGHT: normal; FLOAT: left; WIDTH: 80px; FONT-STYLE: normal
+}
+
+.mform tr {
+	height: 40px;
+}
+
+.mform .myHead tr {
+	height: 30px;
+}
+
+.headText {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 15px; WIDTH: 140px; COLOR: #666;  font-size: 12px; color: #f60;
+}
+.container, .container *{margin:0; padding:0;}
+.container{width:300px; height:210px; overflow:hidden;position:relative;}
+
+.slider{position:absolute;}
+.slider li{ list-style:none;display:inline;}
+.slider img{ width:300px; height:210px; display:block;}
+
+.num{ position:absolute; right:5px; bottom:5px;}
+.num li{
+	float: left;
+	text-align: center;
+	line-height: 16px;
+	border: 1px solid #FF7300;
+	background-color: #fff;
+	color: #FF7300;
+	width: 16px;
+	height: 16px;
+	font-family: Arial;
+	font-size: 12px;
+	cursor: pointer;
+	overflow: hidden;
+	margin: 3px 1px;
+}
+.num li.on{
+	margin: 0 1px;
+	border: 0;
+	background-color: #FF7300;
+	font-weight: bold;
+	color: #fff;
+	line-height: 21px;
+	width: 21px;
+	height: 21px;
+	font-size: 16px;
+}	
+
+
+#nav A {
+	CLEAR: both; PADDING-RIGHT: 13px; DISPLAY: block; PADDING-LEFT: 13px; PADDING-BOTTOM: 6px; COLOR: #000; PADDING-TOP: 8px;
+	TEXT-DECORATION:none;
+}
+#nav A:link {
+	COLOR: #000
+}
+#nav A:visited {
+	COLOR: #000
+}
+#nav A:hover {
+	COLOR: #f30
+}
+#nav A:active {
+	COLOR: #f30
+}
+#nav A.home {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 19px; PADDING-BOTTOM: 6px; PADDING-TOP: 8px
+}
+
+
+/*CSS meneame style pagination*/
+
+DIV.meneame {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 80%; PADDING-BOTTOM: 3px; MARGIN: 3px; COLOR: #ff6500; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+DIV.meneame A {
+	BORDER-RIGHT: #ff9600 1px solid; PADDING-RIGHT: 7px; BACKGROUND-POSITION: 50% bottom; BORDER-TOP: #ff9600 1px solid; PADDING-LEFT: 7px; BACKGROUND-IMAGE: url(meneame.jpg); PADDING-BOTTOM: 5px; BORDER-LEFT: #ff9600 1px solid; COLOR: #ff6500; MARGIN-RIGHT: 3px; PADDING-TOP: 5px; BORDER-BOTTOM: #ff9600 1px solid; TEXT-DECORATION: none
+}
+DIV.meneame A:hover {
+	BORDER-RIGHT: #ff9600 1px solid; BORDER-TOP: #ff9600 1px solid; BACKGROUND-IMAGE: none; BORDER-LEFT: #ff9600 1px solid; COLOR: #ff6500; BORDER-BOTTOM: #ff9600 1px solid; BACKGROUND-COLOR: #ffc794
+}
+DIV.meneame A:active {
+	BORDER-RIGHT: #ff9600 1px solid; BORDER-TOP: #ff9600 1px solid; BACKGROUND-IMAGE: none; BORDER-LEFT: #ff9600 1px solid; COLOR: #ff6500; BORDER-BOTTOM: #ff9600 1px solid; BACKGROUND-COLOR: #ffc794
+}
+DIV.meneame SPAN.current {
+	BORDER-RIGHT: #ff6500 1px solid; PADDING-RIGHT: 7px; BORDER-TOP: #ff6500 1px solid; PADDING-LEFT: 7px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; BORDER-LEFT: #ff6500 1px solid; COLOR: #ff6500; MARGIN-RIGHT: 3px; PADDING-TOP: 5px; BORDER-BOTTOM: #ff6500 1px solid; BACKGROUND-COLOR: #ffbe94
+}
+DIV.meneame SPAN.disabled {
+	BORDER-RIGHT: #ffe3c6 1px solid; PADDING-RIGHT: 7px; BORDER-TOP: #ffe3c6 1px solid; PADDING-LEFT: 7px; PADDING-BOTTOM: 5px; BORDER-LEFT: #ffe3c6 1px solid; COLOR: #ffe3c6; MARGIN-RIGHT: 3px; PADDING-TOP: 5px; BORDER-BOTTOM: #ffe3c6 1px solid
+}

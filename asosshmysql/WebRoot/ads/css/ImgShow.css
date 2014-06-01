@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+h1{ display:block; position:relative; width:970px; height:90px;border:5px dashed #cecece; margin:10px auto 0px auto; z-index:99; text-align:center; color:#333;}
+
+p.title1{ height:50px; line-height:50px; font-size:20px; font-weight:600; margin:0; padding:0;}
+p.title2{ height:30px; line-height:30px; font-size:16px; font-weight:600; margin:0; padding:0; color:#565656;}
+p.title2 a{ text-decoration:none; color:#3333;}
+#accosted{ width:87%;  height:auto; padding:20px; border:1px solid #ececec; border-top:none; position:relative;  margin:0px auto 0px auto; overflow:hidden;}
+#accosted .show_image{ width:70%; height:300px; background:url(../images/bg.png) center top no-repeat; border:1px solid #f7f4f4; margin:0px auto; position:relative;}
+#accosted .options{ display:block; width:200px; height:200px; position:absolute; top:100px; right:160px;}
+#accosted .options a{ display:block; width:156px; padding-left:2px; height:48px; text-align:center; line-height:45px; font-size:16px; font-weight:600; background:url(../images/accosted_button.png) no-repeat; text-decoration:none;  cursor:pointer; margin-bottom:30px;}
+#accosted .options a.btn_like{background-position:-2px -5px;color:#1E99D5;text-shadow:0 -1px 0 rgba(0,51,51,0.35);}
+#accosted .options a.btn_like:hover{ background-position:-2px -55px;}
+#accosted .options a.btn_change{background-position:-2px -105px;color:#da5c84; batext-shadow:0px -1px 0px rgba(200,200,200,0.35); line-height:46px;}
+#accosted .options a.btn_change:hover{ background-position:-2px -155px;}
+#accosted .options a.btn{background-position:-2px -105px;color:#da5c84;text-shadow:0px -1px 0px rgba(200,200,200,0.35); line-height:46px;}
+#accosted .options a.btn:hover{ background-position:-2px -155px;}
+
+#accosted .options .addhot{ display:none; width:100px; height:30px; line-height:30px;position:absolute; top:-80px; left:30px; padding-top:50px; text-align:center; font-size:40px; font-weight:600; color:#ff0454;}
+
+.smh_show{ display:block; width:200px; height:330px; position:absolute; top:10px; left:200px;}
+.smh_show .pics{ display:block; width:250px; height:200px; padding:10px;border-radius:10px;  }
+.smh_show .pics img{ width:250px; height:200px; background:url(../images/loading.gif) center center no-repeat; border:1px dashed #fff; }
+.smh_show .text_info{ display:block; width:170px; height:90px; padding:10px 0px; margin:15px auto 0 auto; border-top:1px solid #f36c95; overflow:hidden; color:#ffffff;}
+.smh_show .text_info .textfl{ display:block; width:55px; height:90px; float:left; padding-right:5px; border-right:1px solid #f36c95;}
+.smh_show .text_info .textfr{ display:block; width:95px; padding-left:5px; height:90px; float:right;overflow:hidden; line-height:17px; font-size:13px;}
+.smh_show .text_info .textfl .text1{ display:block; width:50px;height:20px; line-height:20px; font-size:12px; text-align:center;}
+.smh_show .text_info .textfl .text2{ display:block; width:30px; padding-left:15px; height:20px; line-height:20px; font-size:12px;background:url(../images/accosted_user_sex_icon.png) no-repeat; margin-left:5px; margin-top:5px;}
+.smh_show .text_info .textfl .text3{ display:block; width:50px; height:25px; text-align:center; line-height:26px; font-size:13px; text-decoration:none; color:#f44f95; background:url(../images/accosted_button_small.png) 0px 0px no-repeat; cursor:pointer; margin-top:8px;}
+.smh_show .text_info .textfl .text3:hover{ background-position:0px -25px;}
+.umale{ background-position:0px 0px;}
+.ufemale{background-position:0px -20px;}
+
+
+
+#smohan_scroll{ width:932px; height:150px;background:#f6f6f6; margin:0px auto;}
+#accosted .scroll_image{ width:832px; height:130px; padding:10px 0px; overflow:hidden;float:left;}
+#accosted .scroll_image ul{width:5000px; margin:0; margin-left:-4px; padding:0; list-style-type:none;}
+#accosted .scroll_image ul li{ display:inline-block; width:128px; height:128px; float:left; margin:0px 5px 0px 5px; border:1px solid #ccc;}
+#accosted .scroll_image ul li.checked{ margin:0px 4px; border:2px solid #f63d78;}
+#accosted .scroll_image ul li img{ width:128px; height:128px;cursor:pointer;}
+#accosted .prev,#accosted .next { display:block; width:50px; height:150px;background:url( images/accosted_arrrows.png) no-repeat;}
+#accosted .prev{background-position:0px 0px; float:left;}
+#accosted .next{background-position:-50px 0px; float:right;}

@@ -1,0 +1,81 @@
+	#addressfirst{
+			width: 90%;
+			height:35px;
+			border: 0px solid black;
+			padding-bottom: 10px;
+		}
+		#addressfirst>div{
+			display: inline-block;
+		}
+		#addressfirst>div>a{
+			text-decoration :none;
+			display: block;
+			width: 130px;
+			height: 30px;
+			background-color: #eee;
+			padding-top: 15px;
+		}
+		#addressfirst>div>a:HOVER{
+			background-color:#aaa;
+			font-weight: bold;
+		}
+	 
+	#screenshot{
+		position:absolute;
+		border:1px solid #ccc;
+		background:#333;
+		padding:5px;
+		display:none;
+		color:#fff;
+		}
+	
+	a:link {color: #3366CC}     /* 未访问的链接 */
+	a:visited {color: #3366CC}  /* 已访问的链接 */
+	a:hover {color: red}    /* 当有鼠标悬停在链接上 */
+	a:active {color: #0000FF}   /* 被选择的链接 */
+	
+	/*弹出层地址*/
+	.addresseditor{list-style-type: disc;}
+	.addresseditor li{margin-top: 10px;}
+  	.label-like{font-family: 宋体;font-size: 2.5ex; }
+  	.spark-attention{font-family: 宋体;font-size: 2ex;color: #CBCBCB}
+	.show_add_address{width:800px;height:450px;padding:10px;position:fixed;left:50%;margin-left:-300px;background:#fff;background-clip:padding-box;border-radius:50px;border:10px solid #666;border:15px solid rgba(0,0,0,0.2);}
+	.show_add_address a.close{display:block;width:30px;height:30px;float:right;background:url(<%=basePath%>order/images/close.jpg) no-repeat;overflow:hidden;}
+	.show_add_address a.close:hover{background-position:-30px;}
+	.show_add_address p{font:13px "宋体";  }
+	.show_add_address p span{color:#7d7d7d;}
+	.show_add_address ul{ list-style:none;width:750px;border:1px dashed #e4e4e4; }
+	.show_add_address ul li{float:left; }
+	.show_add_address ul li a{display:block;}
+	.show_add_address a.btn{display:block;width:100px;height:38px;line-height:38px;text-align:center;color:#fff;font-weight:bold;letter-spacing:0.1em;float:right;background:url(show_add_address/images/btn_bg.jpg) repeat-x;border-radius:8px;margin:40px 30px 0 0;}
+	
+	.btn_content{position:absolute;left:111px;top:327px;width:204px;height:25px;}
+	.btn_content button{width:100px;height:25px;line-height:25px;background:#F60;border:1px solid #989898;margin-right:2px;}
+	.btn_content button:hover{color:#fff;}
+	.spark-indeed{color: red;}
+ 
+	/*默认收货地址*/
+	.selected_order_address{
+		 background: #FFF5CC; 
+		 width: 90%;
+		 border: solid 2px #FFE5CC;
+		 font-size: 1.5em;
+		 font-family: 黑体;
+	}
+	.selected_order_address:HOVER {
+		background: #FFFFCC; 
+		width: 90%;
+		border: solid 2px #FFF5CC;
+		 font-size: 1.5em;
+		 font-family: 黑体;
+	}
+	.order_address{
+		 font-family: 宋体;
+	}
+	.order_address:HOVER {
+		background: #FFFFCC; 
+		width: 90%;
+		border: solid 2px #FFF5CC;
+		 font-size: 1.5em;
+		 font-family: 黑体;
+	}

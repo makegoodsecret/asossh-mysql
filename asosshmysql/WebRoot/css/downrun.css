@@ -1,0 +1,89 @@
+
+ .share
+{
+	width: 320px;
+	height: 350px;
+	overflow: hidden;
+	float: left;
+}
+ .share h3
+{
+	width: 320px;
+	height: 27px;
+	font-size: 14px;
+	color: #333;
+	font-weight: bold;
+	text-indent: 10px;
+	line-height: 27px;
+	background: #ccc;
+}
+   .share .buyList
+{
+	width: 320px;
+	height: 350px;
+	display: block;
+	overflow: hidden;
+}
+   .share ul
+{
+	width: 320px;
+	display: block;
+	overflow: hidden;
+}
+   .share ul li
+{
+	width: 320px;
+	float: left;
+	border-bottom: 1px dashed #e5e5e5;
+	margin: 0 auto;
+}
+   .share ul li a.pic img
+{
+	width: 60px;
+	height: 60px;
+	display: block;
+}
+   .share ul li a.pic
+{
+	width: 60px;
+	height: 65px;
+	display: block;
+	border: 1px solid #fff;
+	float: left;
+}
+   .share ul li a.pic:hover
+{
+	border: 1px solid #f60;
+}
+   .share ul li span
+{
+	width: 140px;
+	line-height: 20px;
+	
+	display: block;
+	overflow: hidden;
+	float: left;
+}
+   .share ul li span.who
+{
+	width: 140px;
+	height: 20px;
+	display: block;
+	overflow: hidden;
+	color: #9f9f9f;
+}
+   .share ul li span a.name
+{
+	width: 140px;
+	height: 40px;
+	line-height: 20px;
+	display: block;
+	overflow: hidden;
+	float: left;
+}
+   .share ul li span a:hover
+{
+	text-decoration: underline;
+	color: #f60;
+	cursor: pointer;
+}

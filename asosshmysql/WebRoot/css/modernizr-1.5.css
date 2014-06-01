@@ -1,0 +1,44 @@
+ 
+#garagedoor {
+	margin: 5px auto;
+	list-style: none;
+	/* background: url(../image/menu-bg.jpg) no-repeat; */
+	width: 820px;
+	overflow: auto;	
+}
+#garagedoor li {
+	width: 200px;
+	height: 100px;
+	display: block;
+	float: left;
+}
+
+/* Modernizer Enabled */
+.csstransitions #garagedoor li {
+	-webkit-transition: background-position 0.6s ease;
+	-moz-transition: background-position 0.6s ease;
+	-o-transition-property: background-position 0.6s ease;
+}
+.csstransitions #garagedoor li:hover {
+	background-position: 0 -100px !important;
+}
+
+#garagedoor li#shutter1 { 
+	background: url(../image/shutter_meitu_1.jpg) 0 0 no-repeat; 
+}
+#garagedoor li#shutter2 {
+	background: url(../image/shutter_meitu_2.jpg) 0 0 no-repeat; 
+}
+#garagedoor li#shutter3 {
+	background: url(../image/shutter_meitu_3.jpg) 0 0 no-repeat; 
+}
+#garagedoor li#shutter4 {
+	background: url(../image/shutter_meitu_4.jpg) 0 0 no-repeat; 
+}
+#garagedoor a {
+   width: 200px;
+   height: 100px;
+   display: block;
+   background: url(../image/window.png) no-repeat bottom center;
+   text-indent: -9999px;
+}

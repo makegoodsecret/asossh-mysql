@@ -1,0 +1,134 @@
+﻿/* 代码整理：懒人之家 转载请注明出处：www.lanrenzhijia.com */
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+	margin: 0;
+}
+a {
+	color:#FF2250;
+}
+.px980 {
+	width: 980px;
+	height: auto;
+	margin: auto;
+}
+#logo {
+	margin-top: 10px;
+	width: 370px;
+	float: left;
+	height: 85px;
+}
+.menu {
+	margin-top: 10px;
+	width: 610px;
+	float: left;
+	height: 85px;
+	line-height: 85px;
+	text-align: right;
+}
+.menu a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 22px;
+	color: #f72650;
+	text-decoration: none;
+	margin-right: 30px;
+}
+.menu a:hover {
+	color: #FA7C96;
+}
+.short-text {
+	height: 100px;
+	line-height: 100px;
+	background-color: #fdf7e7;
+	margin-top: 20px!important;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 40px;
+}
+.tableSpec {
+	border-collapse: collapse;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.tableSpec td {
+	border: 1px solid #dedede;
+	padding: 8px;
+}
+.tableSpec thead td {
+	background: #f7f7f7;
+}
+.auto-style1 {
+	color: #800000;
+}
+.searchbutton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:#ededed;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:13px;
+	font-weight:normal;
+	padding:8px 21px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}
+.searchbutton:hover {
+	background-color:#dfdfdf;
+}
+.searchbutton:active {
+	position:relative;
+	top:1px;
+}
+#top-bottom-menu {
+	font: 9pt Arial, Helvetica, sans-serit;
+	position:fixed;
+	height:auto;
+	text-align:center;
+}
+#top-bottom-menu #dstbm-top {
+	position:absolute;
+	border:1px #cccccc solid;
+	display:none;
+	cursor:pointer;
+}
+#top-bottom-menu #dstbm-menu {
+	position:absolute;
+	border:1px #cccccc solid;
+	cursor:pointer;
+}
+#top-bottom-menu #dstbm-menu:hover {
+/*			width:500px;
+			background:none;*/
+		 }
+#top-bottom-menu #dstbm-menu a {
+	color:#000000;
+	text-decoration:none;
+}
+#top-bottom-menu #dstbm-menu a:hover {
+	text-decoration:underline;
+}
+/*		#top-bottom-menu #dstbm-menu:hover ul{
+			display:block;
+		 }
+*/		#top-bottom-menu #dstbm-menu #dstbmmenu {
+	display:none;
+}
+#top-bottom-menu #dstbm-menu ul {
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+}
+#top-bottom-menu #dstbm-menu ul li {
+	display:inline;
+	padding-left:10px;
+}
+#top-bottom-menu #dstbm-menu ul li:first-child {
+	padding-left:0px;
+}
+#top-bottom-menu #dstbm-bottom {
+	position:absolute;
+	border:1px #cccccc solid;
+	cursor:pointer;
+}
+/* 代码整理：懒人之家 转载请注明出处：www.lanrenzhijia.com */

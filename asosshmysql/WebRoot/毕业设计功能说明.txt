@@ -1,0 +1,57 @@
+项目名称：B/S在线订餐系统（功能完善扩展到Android版）
+	
+大概要实现的功能：
+		1.通过百度地图在线定位到餐厅（用户发布该餐厅的菜谱，
+			以及通过百度地图定位到该餐厅（存储该餐厅的经纬度））（需要联网）
+		2.用户可以搜索到该餐厅或通过点击百度地图上的提示坐标，进入到该餐厅，实现点餐。
+		3.用户可以通过打电话的方式到该餐厅，或将点餐的信息储存到二维码中，
+		4.用户在点餐时可以收藏该餐厅的菜谱，并提供评价管理。
+		5.其他功能，基本的用户、餐厅、菜谱的增删改查与jQuery特效。
+		6.管理员与用户提供不同的登录界面
+		7.可以使用支付宝对网站购物车进行支付(为网站的核心功能，由于考虑到安全性，对这部分功能不提供原代码 )
+		说明：百度地图定位功能如果未能实现就该用固定图片标注实现。
+		
+	 
+
+项目配置文件说明：
+	项目的资源文件主要分为两块：
+	一：在config文件夹中
+		--dataSource.properties               --网站的数据库文件(提供了Mysql与Oracle的配置,使用时请修改)
+		--messageResouce_en_US.properties     --国际化英文资源文件
+		--messageResouce_zh_CN.properties     --国际化中文资源文件
+		--log4j.properties            		  --网站的日志文件
+		<!-- 其他文件说明 -->
+		--applicationContext_beans.xml        --网站Hibernate核心事务配置文件
+		--applicationContext_quart.xml        --网站定时调度配置文件
+		--applicationContext.xml			  --Spring核心配置文件（包含对数据库资源文件的配置） 
+		--struts-default.xml                  --struts2处理pc业务逻辑的核心配置文件(主要是控制action与页面的跳转)
+		--struts-mobile.xml					  --struts2处理手机web业务逻辑的核心配置文件(与上面的最主要的区别在于一个是专门在手机上开发的)
+		--struts.xml						  --struts2对一些日常的或者说是默认的一些配置
+		
+	二：在/WebRoot/assets	文件夹中(以下配置文件不提供用户名和密码)
+		--assets/alipayAPIInfo.properties    --网站支付宝模块(支付宝合作id和支付宝合作者key)
+		--assets/count.properties			 --网站统计流量
+		--assets/mailInfo.properties		 --网站邮件发送需要的邮箱和密码 
+		
+		
+作者个人信息：
+	 姓名：               徐凯
+	 联系邮箱:    makegoodsecret@sina.com   (建议使用此方式)
+	 QQ:       1171669635		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
